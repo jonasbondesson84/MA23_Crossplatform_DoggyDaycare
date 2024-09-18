@@ -6,9 +6,11 @@ import { Route, Routes } from 'react-router-dom'
 import Catalog from './components/Catalog'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
+import SelectedDog from './components/SelectedDog'
 
 function App() {
-  
+  const [selectedDog, setSelectedDog] = useState(null);
+  const [dogCatalog, setDogCatalog] = useState(null);
 
   return (
     <>
@@ -20,8 +22,8 @@ function App() {
         <Routes>
           
           <Route path='/' element={<Home />} />
-          <Route path='/catalog' element={<Catalog />} />
-
+          <Route path='/catalog' element={<Catalog setDogCatalog={setDogCatalog} dogCatalog={dogCatalog}/>} />
+          <Route path='/catalog/:selecteddog' element={<SelectedDog />} />
         </Routes>
       </div>
     </div>
