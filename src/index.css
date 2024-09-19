@@ -161,6 +161,12 @@ button:focus-visible {
   transition: transform 0.3s ease; 
   border: 2px solid rgb(217, 217, 217);
 }
+.present {
+  box-shadow: 0 4px 8px greenyellow;
+}
+.notPresent {
+  box-shadow: 0 4px 8px red;
+}
 
 .dog:hover {
   cursor: pointer;
@@ -244,5 +250,36 @@ button:focus-visible {
   opacity: 0.8;
 }
 
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
 
+.search-field {
+  background-color: #f2f2f2;
+  height: 24px;
+  width: 400px;
+  border-radius: 5px;
+  color: #213547;
+}
 
+.filter-logo {
+  margin:5px;
+  height: 32px;
+  width: 32px;
+}
+.active-filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:5px;
+}
+.filter-options {
+  margin: 5px;
+}
+
+.hidden {
+  display: none;
+}
