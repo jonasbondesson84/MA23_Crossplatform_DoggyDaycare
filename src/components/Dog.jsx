@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 
-const Dog = ({dog}) => {
+const Dog = ({dog, setSelectedDog}) => {
     return ( 
         
         <Link to={`/catalog/${dog.id}`} >
-        <div className="dog">
+        <div className="dog" onClick={() => {
+                            setSelectedDog(dog);
+                        }}>
             
             <p id="dog-name">{dog.name}</p>
             <p id="dog-sex">{dog.sex}</p>

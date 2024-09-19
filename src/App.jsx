@@ -22,8 +22,8 @@ function App() {
         <Routes>
           
           <Route path='/' element={<Home />} />
-          <Route path='/catalog' element={<Catalog setDogCatalog={setDogCatalog} dogCatalog={dogCatalog}/>} />
-          <Route path='/catalog/:selecteddog' element={<SelectedDog />} />
+          <Route path='/catalog' element={<Catalog setDogCatalog={setDogCatalog} dogCatalog={dogCatalog} setSelectedDog={setSelectedDog}/>} />
+          <Route path='/catalog/:selecteddog' element={<SelectedDog dogCatalog={dogCatalog} />} />
         </Routes>
       </div>
     </div>
