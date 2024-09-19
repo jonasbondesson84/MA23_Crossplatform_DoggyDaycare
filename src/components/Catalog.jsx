@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Dog from "./Dog";
 
-const Catalog = ({setDogCatalog, dogCatalog}) => {
+const Catalog = ({setDogCatalog, dogCatalog, setSelectedDog}) => {
     
 
     useEffect(() => {
@@ -24,7 +24,7 @@ const Catalog = ({setDogCatalog, dogCatalog}) => {
             <div className="catalog-list">
                 {dogCatalog && dogCatalog.map(dog => (
                     <div className="dog-preview" key={dog.id}>
-                        <Dog dog={dog}/>
+                        <Dog dog={dog} setSelectedDog={setSelectedDog} />
                     </div>
                 ))}
                 {!dogCatalog && <div id="loading">Loading...</div> }

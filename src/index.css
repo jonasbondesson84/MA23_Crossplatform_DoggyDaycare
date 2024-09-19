@@ -34,8 +34,15 @@ body {
   min-height: 100vh;
   color: #213547;
 }
+.content {
+  
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  
+}
 
-h1 {
+/* h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
@@ -57,7 +64,7 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
+} */
 
 /* @media (prefers-color-scheme: light) {
   :root {
@@ -130,10 +137,16 @@ button:focus-visible {
   border: 2px solid #c54a07; 
   
 }
+.catalog {
+  width: 100%;
+}
 
 .catalog-list {
+  width: 100%;
   display: grid;
   grid-template-columns: auto auto auto;
+  
+  
 }
 
 .dog {
@@ -171,3 +184,65 @@ button:focus-visible {
   
   font-size: x-large;
 }
+
+
+.selected-dog {
+  width: 100%;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 800px; 
+  margin: 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgb(217, 217, 217);
+}
+
+.dog-info {
+  height: 100%;
+  display: flex;
+  align-items: center; 
+}
+
+.dog-image {
+  max-width: 300px; 
+  max-height: 300px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  margin-right: 20px; 
+}
+
+.dog-details {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  /* border: 2px solid black; */
+}
+
+.dog-name {
+  font-size: large;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.selected-dog p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.phone-icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.phone-icon:hover {
+  opacity: 0.8;
+}
+
+
+
