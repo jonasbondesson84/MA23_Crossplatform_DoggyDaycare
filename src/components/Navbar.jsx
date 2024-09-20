@@ -4,7 +4,9 @@ import logo from '../assets/logo.webp'
 const Navbar = () => {
     return ( 
         <nav className="navbar">
-            <img src={logo} alt="" id="navbar-logo"/>
+            <Link to='/'>
+                <img src={logo} alt="" id="navbar-logo"/>
+            </Link>
             <div className="links">
             <Link to='/'> 
                 <div className="links">

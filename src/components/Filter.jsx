@@ -5,17 +5,14 @@ const Filter = ({filterOptions, filterName, setSelectedOptions, filter}) => {
     const [options, setOptions] = useState([])
     
     useEffect(()=> {
-        console.log(filterOptions);
          const options = [...new Set(filterOptions.map(option => ({
             value: option,
-            label: option
+            label: String(option)
          })))]
-         console.log(options);
          setOptions(options);
     }, [])
     const handleChange = (selectedOption) => {
-        // console.log("selectedOptions")
-        // console.log(selectedOption);
+       
         setSelectedOptions(selectedOption);
     }
 
@@ -27,17 +24,8 @@ const Filter = ({filterOptions, filterName, setSelectedOptions, filter}) => {
                     value={filter}
                     onChange={handleChange}
                     isMulti
+                    placeholder={filterName}
             />
-            {/* <button onClick={() => {console.log(selectedOptions)}}>klick</button> */}
-            {/* {filterOptions && filterOptions
-                
-                .map(filter => (
-                    <div className="dog-preview" key={filter.id}>
-                        <Select options={filter[filterName]} />
-                        {filter[filterName]} 
-                    </div>
-                ))} */}
-            
         </div>
      );
 }
