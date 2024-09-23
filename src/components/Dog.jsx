@@ -4,9 +4,7 @@ const Dog = ({dog, setSelectedDog}) => {
     return ( 
         
         <Link to={`/catalog/${dog.id}`} >
-        <div className={`dog ${dog.present ? 'present' : 'notPresent'}`} onClick={() => {
-                            setSelectedDog(dog);
-                        }}>
+        <div className={`dog ${dog.present ? 'present' : 'notPresent'}`}>
             
             <p id="dog-name">{dog.name}</p>
             

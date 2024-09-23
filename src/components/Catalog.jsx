@@ -21,12 +21,9 @@ const Catalog = ({ dogCatalog,
     
     return ( 
         <div className="catalog">
-            Catalog
+            
             <div className="filter">
                 <input type="text" className="search-field" onChange={e => setSearchTerm(e.target.value)} title="Filter by name" placeholder="Filter by name"/>
-                <img src={filterLogo} alt="" className="filter-logo" onClick={() => {
-
-                }}/>
                 
                 
             </div>
