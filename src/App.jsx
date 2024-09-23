@@ -7,6 +7,7 @@ import Catalog from './components/Catalog'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import SelectedDog from './components/SelectedDog'
+import NavbarMobile from './components/NavbarMobile'
 
 function App() {
   const [selectedDog, setSelectedDog] = useState(null);
@@ -18,6 +19,8 @@ function App() {
   const [filterAge,setFilterAge] = useState([]);
   const [filterPresent, setFilterPresent] = useState([]);
   const [filterOptions, setFilterOptions] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false)
+  
 
   useEffect(() => {
     const url = 'https://api.jsonbin.io/v3/b/66eab6b4e41b4d34e4328578';
@@ -47,7 +50,8 @@ function App() {
     
     <div className="app">
       
-      <Navbar />
+      <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+      <NavbarMobile menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
       <div className="content">
         <Routes>
           
