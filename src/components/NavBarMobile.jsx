@@ -17,7 +17,7 @@ const NavbarMobile = ({menuOpen, setMenuOpen}) => {
     return ( 
         <nav className="navbarMobile">
             <Link to='/'>
-                <img src={logo} alt="" id="navbar-logo"/>
+                <img src={logo} alt="" className="navbar-logo border-primary"/>
             </Link>
             {Hamburger }
             <div className="menuOpen">

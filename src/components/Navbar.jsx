@@ -8,7 +8,7 @@ const Navbar = ({menuOpen, setMenuOpen}) => {
     return ( 
         <nav className="navbar">
             <Link to='/'>
-                <img src={logo} alt="" id="navbar-logo"/>
+                <img src={logo} alt="" className="navbar-logo border-primary"/>
             </Link>
             <NavLinks setMenuOpen={setMenuOpen}/>
             

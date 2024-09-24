@@ -52,7 +52,7 @@ function App() {
       
       <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
       <NavbarMobile menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
-      <div className="content">
+      <div className="content center-content">
         <Routes>
           
           <Route path='/' element={<Home 
