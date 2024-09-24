@@ -22,7 +22,7 @@ const Catalog = ({ dogCatalog,
     return ( 
         <div className="catalog">
             
-            <div className="filter">
+            <div className="filter center-content" >
                 <input type="text" className="search-field" onChange={e => setSearchTerm(e.target.value)} title="Filter by name" placeholder="Filter by name"/>
                 
                 

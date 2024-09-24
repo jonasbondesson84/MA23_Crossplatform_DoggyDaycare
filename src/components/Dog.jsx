@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 
+
 const Dog = ({dog, setSelectedDog}) => {
     return ( 
         
         <Link to={`/catalog/${dog.id}`} >
-        <div className={`dog ${dog.present ? 'present' : 'notPresent'}`}>
+        <div className={`dog ${dog.present ? 'box-shadow-green' : 'box-shadow-red'} padding-20 margin-20 box-shadow-light border-default`}>
             
             <p id="dog-name">{dog.name}</p>
             

@@ -21,7 +21,7 @@ const SelectedDog = ({dogCatalog}) => {
        
     }, [params])
     return ( 
-        <div className="selected-dog">
+        <div className="selected-dog padding-20 margin-20 box-shadow-heavy border-default">
         {dog && (
             <div className="dog-info">
             <img src={dog.img} alt={dog.name} className="dog-image" />
@@ -32,12 +32,14 @@ const SelectedDog = ({dogCatalog}) => {
                 <p>Sex: {dog.sex}</p>
                 <p>
                 Owner: {dog.owner.name} {dog.owner.lastName}{" "}
-                <img
-                    src={phone}
-                    alt={dog.owner.phoneNumber}
-                    title={dog.owner.phoneNumber}
-                    className="phone-icon"
-                />
+                <a href={`tel:${dog.owner.phoneNumber}`}>
+                    <img
+                        src={phone}
+                        alt={dog.owner.phoneNumber}
+                        title={dog.owner.phoneNumber}
+                        className="phone-icon"
+                    />
+                </a>
                 </p>
             </div>
             </div>
