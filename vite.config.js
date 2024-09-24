@@ -5,4 +5,9 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: "MA23_Crossplatform_DoggyDaycare",
   plugins: [react()],
+  build: {
+    rollupOptions: {
+      external: ['react-icons/md'], // Lägg till detta om du vill exkludera modulen från paketet
+    },
+  },
 })
