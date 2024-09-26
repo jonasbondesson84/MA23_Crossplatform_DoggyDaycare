@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import phone from '../assets/phone.svg'
+import {motion} from 'framer-motion'
+import '../css/SelectedDog.css'
 
 
 const SelectedDog = ({dogCatalog}) => {
@@ -21,7 +23,11 @@ const SelectedDog = ({dogCatalog}) => {
        
     }, [params])
     return ( 
-        <div className="selected-dog padding-20 margin-20 box-shadow-heavy border-default">
+        <motion.div className="selected-dog padding-20 margin-20 box-shadow-heavy border-default"
+            initial = {{width: 0, opacity:0 }}
+            animate= {{width: "100%", opacity: 1}}
+            exit={{x: window.innerWidth, opacity:0}}
+        >
         {dog && (
             <div className="dog-info">
             <img src={dog.img} alt={dog.name} className="dog-image" />
@@ -44,7 +50,7 @@ const SelectedDog = ({dogCatalog}) => {
             </div>
             </div>
         )}
-        </div>
+        </motion.div>
      );
 }
  

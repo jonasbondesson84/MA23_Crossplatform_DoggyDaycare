@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from '../assets/logo.webp'
 import NavLinks from "./NavLinks";
+import '../css/Navbar.css'
 
 
 const Navbar = ({menuOpen, setMenuOpen}) => {

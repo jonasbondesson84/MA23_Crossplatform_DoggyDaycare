@@ -26,8 +26,8 @@ const NavbarMobile = ({menuOpen, setMenuOpen}) => {
             {/* {Hamburger } */}
             {/* <div className="hamburgerMenu" onClick={()=> {setMenuOpen(!menuOpen)}}>Menu</div> */}
             <HamburgerMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
-            <div className={`menuOpen ${menuOpen ? 'change' : ''}`}>
-            {menuOpen && <NavLinks setMenuOpen={setMenuOpen}/>}
+            <div className={`menuOpen ${menuOpen ? 'change' : ' '}`}>
+            {<NavLinks setMenuOpen={setMenuOpen} menuOpen={menuOpen}/>}
             </div>
         </nav>
      );
