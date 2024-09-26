@@ -1,0 +1,123 @@
+
+.catalog {
+    margin-top: 10px;
+    width: 100vw;
+    display: block;
+    justify-content: center;
+  }
+  
+  .catalog-list {
+    margin-top: 10px;
+    width: 100vw;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    
+  }
+  .dog {
+    color: #242424;
+    background-color: #f9f9f9;
+    border-radius: 12px; 
+    max-width: 300px; 
+    min-width: 250px;
+    min-height: 300px;
+    text-align: center; 
+    transition: transform 0.3s ease; 
+  }
+  
+.dog:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+
+
+#loading {
+    font-size: x-large;
+  }
+
+
+.search-field {
+    background-color: #f2f2f2;
+    height: 24px;
+    min-width: 200px;
+    max-width: 400px;
+    border-radius: 5px;
+    color: #213547;
+  }
+  
+  .active-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:5px;
+  }
+  .filter-options {
+    margin: 5px;
+  }
+  
+  @media screen and (max-width: 768px) {
+
+
+    .catalog {
+      width: 100vw;
+      display: block;
+      align-items: center;  
+    }
+      
+    .catalog-list {
+      width: 100vw;
+      display: grid;    
+      justify-content: center;
+      grid-template-columns: auto auto;  
+    }
+  
+    .active-filter {
+      display: grid;
+      grid-template-columns: auto auto;
+      justify-content: center;
+      align-items: center;
+      margin:5px;
+    }
+  
+  .filter-options {
+    margin: 5px;
+  }
+  }
+  
+
+  @media screen and (max-width: 850px) {
+
+  .catalog-list {
+    width: 100vw;
+    display: grid;  
+    justify-content: center;
+    grid-template-columns: auto auto;
+  }
+  }
+
+  @media screen and (max-width: 1280px) { 
+  
+    .catalog-list {
+      width: 100vw;
+      display: grid;
+      justify-content: center;
+      grid-template-columns: auto auto auto;
+    }
+  }
+  @media screen and (max-width: 450px) { 
+
+    .catalog-list {
+      width: 100vw;
+      display: grid;
+      justify-content: center;
+      grid-template-columns: auto ;
+    }
+
+  .active-filter {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-items: center;
+    margin:5px;
+  }
+}

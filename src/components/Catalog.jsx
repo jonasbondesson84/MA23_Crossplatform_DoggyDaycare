@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Dog from "./Dog";
 import filterLogo from '../assets/filter_list.svg';
 import Filter from "./Filter";
+import {motion} from 'framer-motion'
+import '../css/Catalog.css'
 
 
 const Catalog = ({ dogCatalog, 
@@ -20,7 +22,11 @@ const Catalog = ({ dogCatalog,
 
     
     return ( 
-        <div className="catalog">
+        <motion.div className="catalog"
+            initial = {{width: 0, opacity: 0}}
+            animate= {{width: "100%", opacity: 1}}
+            exit={{x: window.innerWidth, opacity: 0}}
+        >
             
             <div className="filter center-content" >
                 <input type="text" className="search-field" onChange={e => setSearchTerm(e.target.value)} title="Filter by name" placeholder="Filter by name"/>
@@ -48,7 +54,7 @@ const Catalog = ({ dogCatalog,
                 }
                 {!dogCatalog && <div id="loading">Loading...</div> }
             </div>
-        </div>
+        </motion.div>
      );
 }
  

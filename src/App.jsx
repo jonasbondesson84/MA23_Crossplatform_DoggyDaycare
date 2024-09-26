@@ -2,14 +2,17 @@ import { useState ,useEffect} from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import Catalog from './components/Catalog'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import SelectedDog from './components/SelectedDog'
 import NavbarMobile from './components/NavbarMobile'
+import {AnimatePresence} from 'framer-motion'
+
 
 function App() {
+  const location= useLocation();
   const [selectedDog, setSelectedDog] = useState(null);
   const [dogCatalog, setDogCatalog] = useState(null);
 
@@ -53,29 +56,31 @@ function App() {
       <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
       <NavbarMobile menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
       <div className="content center-content">
-        <Routes>
-          
-          <Route path='/' element={<Home 
-                                  dogCatalog={dogCatalog}
-                                  />} />
-          <Route path='/catalog' element={<Catalog 
-                                  dogCatalog={dogCatalog} 
-                                  filterOptions={filterOptions}
-                                  filterAge={filterAge}
-                                  setFilterAge={setFilterAge}
-                                  filterBreed={filterBreed}
-                                  setFilterBreed={setFilterBreed}
-                                  filterPresent={filterPresent}
-                                  setFilterPresent={setFilterPresent}
-                                  filterSex={filterSex}
-                                  setFilterSex={setFilterSex}
-                                  searchTerm={searchTerm}
-                                  setSearchTerm={setSearchTerm}
-                                  
-                                  />} />
-          <Route path='/catalog/:selecteddog' element={<SelectedDog 
-                                  dogCatalog={dogCatalog} />} />
-        </Routes>
+        <AnimatePresence mode='wait'>
+          <Routes location={location} key={location.pathname}>
+            
+            <Route path='/' element={<Home 
+                                    dogCatalog={dogCatalog}
+                                    />} />
+            <Route path='/catalog' element={<Catalog 
+                                    dogCatalog={dogCatalog} 
+                                    filterOptions={filterOptions}
+                                    filterAge={filterAge}
+                                    setFilterAge={setFilterAge}
+                                    filterBreed={filterBreed}
+                                    setFilterBreed={setFilterBreed}
+                                    filterPresent={filterPresent}
+                                    setFilterPresent={setFilterPresent}
+                                    filterSex={filterSex}
+                                    setFilterSex={setFilterSex}
+                                    searchTerm={searchTerm}
+                                    setSearchTerm={setSearchTerm}
+                                    
+                                    />} />
+            <Route path='/catalog/:selecteddog' element={<SelectedDog 
+                                    dogCatalog={dogCatalog} />} />
+          </Routes>
+        </AnimatePresence>
       </div>
     </div>
     </>
