@@ -65,7 +65,10 @@
     font-size: x-large;
     font-weight: bold;
 }
-  
+.base-page-size {
+  width: 100%;
+  min-height: 100vh;
+}
 @media screen and (max-width: 850px) { 
     .selected-dog {
       display: flex;

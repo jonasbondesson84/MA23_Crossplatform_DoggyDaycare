@@ -4,30 +4,17 @@ import logo from '../assets/logo.webp'
 import { useState } from "react";
 import NavLinks from "./NavLinks";
 import HamburgerMenu from "./HamburgerMenu";
+import '../css/Catalog.css'
 
 
 const NavbarMobile = ({menuOpen, setMenuOpen}) => {
 
-    
-    // const Hamburger = <MdOutlineMenu className="hamburgerMenu"
-    //         size="30px" color="black" onClick={()=> {
-                
-    //             setMenuOpen(!menuOpen)}}/>
-
-    
-    
-
-    
     return ( 
         <nav className="navbarMobile">
-            <Link to='/'>
-                <img src={logo} alt="" className="navbar-logo border-primary"/>
-            </Link>
-            {/* {Hamburger } */}
-            {/* <div className="hamburgerMenu" onClick={()=> {setMenuOpen(!menuOpen)}}>Menu</div> */}
+            <img src={logo} alt="" className="navbar-logo border-primary"/>
             <HamburgerMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
             <div className={`menuOpen ${menuOpen ? 'change' : ' '}`}>
-            {<NavLinks setMenuOpen={setMenuOpen} menuOpen={menuOpen}/>}
+                {<NavLinks setMenuOpen={setMenuOpen} menuOpen={menuOpen}/>}
             </div>
         </nav>
      );
