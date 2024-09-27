@@ -18,14 +18,14 @@ const Filter = ({filterOptions, filterName, setSelectedOptions, filter}) => {
 
     return ( 
         <div className="filter-options">
-            <Select className='select-filter'
+            <Select 
                     options={options} 
                     closeMenuOnSelect={false} 
                     value={filter}
                     onChange={handleChange}
                     isMulti
                     placeholder={filterName}
-                    menuPosition="fixed" // Gör menyn 'fixed', vilket gör att den inte påverkas av föräldraelement
+                    menuPosition="fixed"
                     menuPortalTarget={document.body}
                     styles={{menu: provided => ({ ...provided, zIndex: 9999 })}}
 

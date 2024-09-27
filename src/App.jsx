@@ -8,7 +8,7 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import SelectedDog from './components/SelectedDog'
 import NavbarMobile from './components/NavbarMobile'
-import {AnimatePresence} from 'framer-motion'
+import {AnimatePresence, motion} from 'framer-motion'
 
 
 function App() {
@@ -56,7 +56,20 @@ function App() {
       <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
       <NavbarMobile menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
       <div className="content center-content">
-        <AnimatePresence mode='wait'>
+        <AnimatePresence mode='wait' >
+          <motion.div 
+           initial = "initialState"
+           animate= "animateState"
+           exit="exitState"
+           transition={{duration: 0.75}}
+           variants={{
+               initialState: {opacity: 0,
+                   clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)"},
+               animateState: {opacity: 1,
+                   clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)"},
+               exxitState: {clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)"}
+           }}
+          >
           <Routes location={location} key={location.pathname}>
             
             <Route path='/' element={<Home 
@@ -80,6 +93,7 @@ function App() {
             <Route path='/catalog/:selecteddog' element={<SelectedDog 
                                     dogCatalog={dogCatalog} />} />
           </Routes>
+          </motion.div>
         </AnimatePresence>
       </div>
     </div>

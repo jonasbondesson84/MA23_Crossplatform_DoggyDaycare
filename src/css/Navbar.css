@@ -2,7 +2,7 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  width: 100vw;
+  max-width: 100vw;
   margin: 20px;
   border-bottom: 1px solid #f2f2f2;
   height: 120px;
@@ -53,6 +53,7 @@
   object-fit: contain; 
   border-radius: 50%;
   
+  
 }
 
 .navbarMobile {
@@ -74,9 +75,10 @@
 
   .navbarMobile {
     height: auto;
-    width: 100vw;
+    /* width: 100vw; */
     display:block;
     align-items: center;
+    justify-content: center;
     margin: 0;
     padding: 0;
     border-bottom: 2px solid #f2f2f2;
@@ -99,7 +101,7 @@
 
   .link {
     /* height: 100%; */
-    background-color: #555;  
+    background-color: #8e8e8e;  
     text-align: end;
     display: block;
     padding: 0;
@@ -108,7 +110,7 @@
 
   .links {  
     /* height: 100%; */
-    background-color: #555;  
+    background-color: #8e8e8e;  
     flex-direction: row;
     float: none;
     
@@ -125,6 +127,8 @@
     width: 50px;
     margin-left: 40px;
     margin-top: 20px;  
+    top: 3%;
+    
   }
 
   .menuOpen {
@@ -153,7 +157,7 @@
 
   .hamburgerMenu {
     display: block;
-    top:4%;
+    top:3%;
   }
   .bar1, .bar2, .bar3 {
     width: 35px;

@@ -5,7 +5,6 @@ import Filter from "./Filter";
 import {motion} from 'framer-motion'
 import '../css/Catalog.css'
 
-
 const Catalog = ({ dogCatalog, 
                     filterOptions,
                     filterAge,
@@ -20,18 +19,10 @@ const Catalog = ({ dogCatalog,
                     setSearchTerm
                 }) => {
 
-    
     return ( 
-        <motion.div className="catalog"
-            initial = {{width: 0, opacity: 0}}
-            animate= {{width: "100%", opacity: 1}}
-            exit={{x: window.innerWidth, opacity: 0}}
-        >
-            
+        <div className="catalog">
             <div className="filter center-content" >
-                <input type="text" className="search-field" onChange={e => setSearchTerm(e.target.value)} title="Filter by name" placeholder="Filter by name"/>
-                
-                
+                <input type="text" className="search-field" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} title="Filter by name" placeholder="Filter by name" />
             </div>
             {filterOptions && <div className="active-filter">
                 <Filter filterOptions={filterOptions.breed} filterName='breed' setSelectedOptions={setFilterBreed} filter={filterBreed}/>
@@ -39,7 +30,11 @@ const Catalog = ({ dogCatalog,
                 <Filter filterOptions={filterOptions.sex} filterName='sex' setSelectedOptions={setFilterSex} filter={filterSex}/>
                 <Filter filterOptions={filterOptions.present} filterName='present' setSelectedOptions={setFilterPresent} filter={filterPresent}/>
             </div>}
-            <div className="catalog-list">
+            <motion.div className="catalog-list"
+                initial = {{width: 0, opacity: 0}}
+                animate= {{width: "100%", opacity: 1}}
+                exit={{x: window.innerWidth, opacity:0}}
+                >
                 {dogCatalog && dogCatalog
                     .filter((dog) => {return dog.name.toString().toLowerCase().includes(searchTerm.toLowerCase())})
                     .filter(dog => filterSex.length > 0 ? filterSex.some(filter => filter.value === dog.sex) : true)
@@ -53,8 +48,8 @@ const Catalog = ({ dogCatalog,
                     ))
                 }
                 {!dogCatalog && <div id="loading">Loading...</div> }
-            </div>
-        </motion.div>
+            </motion.div>
+        </div>
      );
 }
  
